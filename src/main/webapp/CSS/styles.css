@@ -1,0 +1,664 @@
+/* ========================================
+   ESTILOS GENERALES PARA SAKURA BITES
+   Paleta temática inspirada en dangos japoneses
+   ======================================== */
+
+/* Reset básico - elimina márgenes y padding por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho total */
+}
+
+/* ========================================
+   VARIABLES CSS - PALETA DE COLORES DANGO
+   ======================================== */
+:root {
+    /* Tonos rosados inspirados en flores de cerezo */
+    --rosa-pastel: #FFE4E1;      /* Rosa muy suave para fondos */
+    --rosa-sakura: #FFB6C1;      /* Rosa principal tipo sakura */
+    --rosa-fuerte: #FF91A4;      /* Rosa vibrante para acentos */
+    
+    /* Colores complementarios */
+    --verde-menta: #C8E6C9;      /* Verde suave para contraste */
+    --crema: #FFF8DC;            /* Color crema para variación */
+    --blanco-perla: #FFFAFA;     /* Blanco cálido base */
+    --gris-suave: #F5F5F5;       /* Gris neutro */
+    --marron-dango: #D2B48C;     /* Marrón del palito de dango */
+    
+    /* Colores funcionales */
+    --texto-oscuro: #4A4A4A;     /* Color principal del texto */
+    --sombra-suave: rgba(255, 182, 193, 0.2); /* Sombra rosada translúcida */
+}
+
+/* ========================================
+   ESTILOS GENERALES DEL BODY
+   ======================================== */
+body {
+    font-family: Arial, sans-serif;           /* Fuente principal legible */
+    line-height: 1.6;                        /* Espaciado vertical cómodo para lectura */
+    color: var(--texto-oscuro);              /* Color de texto por defecto */
+    background-color: var(--blanco-perla);   /* Fondo base */
+    
+    /* Fondo con gradientes radiales superpuestos - crea textura sutil */
+    background-image: 
+        radial-gradient(circle at 10% 20%, var(--rosa-pastel) 0%, transparent 50%),   /* Círculo rosa arriba-izquierda */
+        radial-gradient(circle at 80% 80%, var(--verde-menta) 0%, transparent 50%),  /* Círculo verde abajo-derecha */
+        radial-gradient(circle at 40% 40%, var(--crema) 0%, transparent 50%);        /* Círculo crema centro */
+}
+
+/* ========================================
+   TIPOGRAFÍA - TÍTULOS
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;    /* Fuente serif más elegante para títulos */
+    color: var(--rosa-fuerte);       /* Color rosa vibrante */
+    margin-bottom: 15px;             /* Espacio debajo de cada título */
+    text-shadow: 1px 1px 2px var(--sombra-suave); /* Sombra sutil para profundidad */
+}
+
+/* ========================================
+   HEADER Y NAVEGACIÓN
+   ======================================== */
+header {
+    /* Gradiente diagonal de blanco a rosa */
+    background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--rosa-pastel) 100%);
+    padding: 20px;                           /* Espaciado interno */
+    box-shadow: 0 2px 10px var(--sombra-suave); /* Sombra debajo del header */
+    margin-bottom: 30px;                     /* Separación del contenido */
+    border-bottom: 3px solid var(--rosa-sakura); /* Línea decorativa inferior */
+}
+
+/* Contenedor de navegación */
+nav {
+    display: flex;          /* Layout horizontal flexible */
+    align-items: center;    /* Centra verticalmente los elementos */
+    gap: 15px;             /* Espacio entre elementos de navegación */
+    margin-top: 10px;      /* Separación del contenido superior */
+}
+
+/* Enlaces de navegación */
+nav a {
+    text-decoration: none;                    /* Quita el subrayado */
+    color: var(--texto-oscuro);              /* Color de texto oscuro */
+    padding: 8px 15px;                       /* Espaciado interno del botón */
+    border-radius: 20px;                     /* Bordes redondeados tipo píldora */
+    transition: all 0.3s ease;              /* Animación suave para todos los cambios */
+    background-color: var(--blanco-perla);   /* Fondo blanco */
+    border: 2px solid transparent;           /* Borde invisible inicialmente */
+}
+
+/* Efecto hover en navegación */
+nav a:hover {
+    background-color: var(--rosa-sakura);    /* Fondo rosa al pasar el mouse */
+    color: white;                            /* Texto blanco para contraste */
+    border-color: var(--rosa-fuerte);        /* Borde rosa fuerte */
+    transform: translateY(-2px);             /* Eleva el botón 2px */
+    box-shadow: 0 4px 8px var(--sombra-suave); /* Sombra más pronunciada */
+}
+
+/* ========================================
+   FORMULARIOS
+   ======================================== */
+form {
+    font-family: 'Verdana', sans-serif;     /* Fuente diferente para formularios */
+    color: #6B4423;                         /* Color marrón para el texto */
+    /* Gradiente de blanco a crema */
+    background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--crema) 100%);
+    padding: 25px;                          /* Espaciado interno generoso */
+    border-radius: 15px;                    /* Bordes muy redondeados */
+    box-shadow: 0 5px 15px var(--sombra-suave); /* Sombra pronunciada */
+    margin: 20px 0;                         /* Margen vertical */
+    border: 2px solid var(--rosa-pastel);   /* Borde rosa suave */
+}
+
+/* Campos de entrada de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;                            /* Ancho completo del contenedor */
+    padding: 12px;                          /* Espaciado interno cómodo */
+    margin: 8px 0;                          /* Margen vertical */
+    border: 2px solid var(--rosa-pastel);   /* Borde rosa suave */
+    border-radius: 10px;                    /* Bordes redondeados */
+    font-family: 'Verdana', sans-serif;     /* Misma fuente del formulario */
+    background-color: var(--blanco-perla);  /* Fondo blanco perla */
+    transition: border-color 0.3s ease;     /* Animación suave del borde */
+}
+
+/* Estado focus (cuando el campo está seleccionado) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;                          /* Quita el outline por defecto del navegador */
+    border-color: var(--rosa-sakura);       /* Borde rosa más intenso */
+    box-shadow: 0 0 5px var(--sombra-suave); /* Resplandor sutil */
+}
+
+/* Botones y campos de envío */
+input[type="submit"],
+button {
+    /* Gradiente de rosa sakura a rosa fuerte */
+    background: linear-gradient(135deg, var(--rosa-sakura) 0%, var(--rosa-fuerte) 100%);
+    color: white;                           /* Texto blanco */
+    padding: 12px 25px;                     /* Espaciado interno */
+    border: none;                           /* Sin borde */
+    border-radius: 25px;                    /* Muy redondeado */
+    cursor: pointer;                        /* Cursor de mano */
+    font-weight: bold;                      /* Texto en negrita */
+    transition: all 0.3s ease;             /* Animación suave */
+    box-shadow: 0 4px 10px var(--sombra-suave); /* Sombra inicial */
+}
+
+/* Efecto hover en botones */
+input[type="submit"]:hover,
+button:hover {
+    /* Gradiente invertido */
+    background: linear-gradient(135deg, var(--rosa-fuerte) 0%, var(--rosa-sakura) 100%);
+    transform: translateY(-2px);            /* Eleva el botón */
+    box-shadow: 0 6px 15px var(--sombra-suave); /* Sombra más pronunciada */
+}
+
+/* ========================================
+   SECCIONES DE CONTENIDO
+   ======================================== */
+section {
+    max-width: 1200px;                      /* Ancho máximo para legibilidad */
+    margin: 0 auto;                         /* Centrado horizontal */
+    padding: 20px;                          /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 15px;                    /* Bordes redondeados */
+    box-shadow: 0 5px 20px var(--sombra-suave); /* Sombra para profundidad */
+    margin-bottom: 20px;                    /* Separación entre secciones */
+}
+
+/* ========================================
+   TABLAS
+   ======================================== */
+table {
+    width: 100%;                            /* Ancho completo */
+    border-collapse: collapse;              /* Une los bordes de celdas adyacentes */
+    margin: 20px 0;                         /* Margen vertical */
+    background-color: var(--blanco-perla);  /* Fondo base */
+    border-radius: 10px;                    /* Bordes redondeados */
+    overflow: hidden;                       /* Oculta contenido que sobresale (para border-radius) */
+    box-shadow: 0 3px 10px var(--sombra-suave); /* Sombra de la tabla */
+}
+
+/* Encabezados de tabla */
+table th {
+    /* Gradiente de rosa sakura a rosa fuerte */
+    background: linear-gradient(135deg, var(--rosa-sakura) 0%, var(--rosa-fuerte) 100%);
+    color: white;                           /* Texto blanco */
+    padding: 15px;                          /* Espaciado interno */
+    text-align: left;                       /* Alineación izquierda */
+    font-weight: bold;                      /* Texto en negrita */
+}
+
+/* Celdas de datos */
+table td {
+    padding: 12px 15px;                     /* Espaciado interno */
+    border-bottom: 1px solid var(--rosa-pastel); /* Línea separadora inferior */
+}
+
+/* Efecto hover en filas */
+table tr:hover {
+    background-color: var(--crema);         /* Fondo crema al pasar el mouse */
+}
+
+/* Filas pares - efecto cebra */
+table tr:nth-child(even) {
+    background-color: rgba(255, 228, 225, 0.3); /* Fondo rosa muy suave */
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    /* Gradiente de marrón dango a rosa sakura */
+    background: linear-gradient(135deg, var(--marron-dango) 0%, var(--rosa-sakura) 100%);
+    color: white;                           /* Texto blanco */
+    text-align: center;                     /* Centrado */
+    padding: 30px 20px;                     /* Espaciado interno */
+    margin-top: 50px;                       /* Separación del contenido */
+    border-top: 3px solid var(--rosa-fuerte); /* Línea decorativa superior */
+    box-shadow: 0 -5px 15px var(--sombra-suave); /* Sombra hacia arriba */
+}
+
+/* Navegación del footer */
+footer nav {
+    justify-content: center;                /* Centra los elementos */
+    margin-bottom: 15px;                    /* Espacio debajo */
+}
+
+/* Enlaces del footer */
+footer nav a {
+    color: white;                           /* Texto blanco */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borde blanco semitransparente */
+}
+
+/* Hover en enlaces del footer */
+footer nav a:hover {
+    background-color: var(--blanco-perla);  /* Fondo blanco sólido */
+    color: var(--rosa-fuerte);              /* Texto rosa fuerte */
+    border-color: var(--blanco-perla);      /* Borde blanco */
+}
+
+/* ========================================
+   CLASES DE ESTADO Y MENSAJES
+   ======================================== */
+
+/* Mensajes de error */
+.error {
+    color: #D32F2F;                         /* Texto rojo */
+    background-color: #FFCDD2;              /* Fondo rosa claro */
+    padding: 12px;                          /* Espaciado interno */
+    border-radius: 10px;                    /* Bordes redondeados */
+    margin: 10px 0;                         /* Margen vertical */
+    border-left: 4px solid #D32F2F;         /* Línea roja izquierda */
+}
+
+/* Mensajes de éxito */
+.success {
+    color: #388E3C;                         /* Texto verde */
+    background-color: var(--verde-menta);   /* Fondo verde menta */
+    padding: 12px;                          /* Espaciado interno */
+    border-radius: 10px;                    /* Bordes redondeados */
+    margin: 10px 0;                         /* Margen vertical */
+    border-left: 4px solid #388E3C;         /* Línea verde izquierda */
+}
+
+/* Mensajes de advertencia */
+.warning {
+    color: #F57C00;                         /* Texto naranja */
+    background-color: #FFE0B2;              /* Fondo naranja claro */
+    padding: 12px;                          /* Espaciado interno */
+    border-radius: 10px;                    /* Bordes redondeados */
+    margin: 10px 0;                         /* Margen vertical */
+    border-left: 4px solid #F57C00;         /* Línea naranja izquierda */
+}
+
+/* ========================================
+   LAYOUTS Y GRIDS
+   ======================================== */
+
+/* Grid responsivo para elementos del menú */
+.menu-items {
+    display: grid;                          /* Layout de grilla */
+    /* Columnas que se ajustan automáticamente, mínimo 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;                             /* Espacio entre elementos */
+    margin: 20px 0;                        /* Margen vertical */
+}
+
+/* Panel de administración */
+.admin-panel {
+    /* Gradiente de crema a rosa pastel */
+    background: linear-gradient(135deg, var(--crema) 0%, var(--rosa-pastel) 100%);
+    padding: 25px;                          /* Espaciado interno */
+    border-radius: 15px;                    /* Bordes redondeados */
+    margin: 20px 0;                         /* Margen vertical */
+    border: 2px solid var(--rosa-sakura);   /* Borde rosa */
+    box-shadow: 0 5px 15px var(--sombra-suave); /* Sombra */
+}
+
+/* ========================================
+   CARDS Y ELEMENTOS ESPECIALES
+   ======================================== */
+
+/* Cards de productos y miembros del equipo */
+.producto-card,
+.team-member {
+    /* Gradiente complejo de tres colores */
+    background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--rosa-pastel) 50%, var(--crema) 100%);
+    border: 2px solid var(--rosa-sakura);   /* Borde rosa */
+    border-radius: 15px;                    /* Bordes muy redondeados */
+    padding: 20px;                          /* Espaciado interno */
+    box-shadow: 0 5px 15px var(--sombra-suave); /* Sombra inicial */
+    transition: all 0.3s ease;             /* Animación suave */
+}
+
+/* Efecto hover en cards */
+.producto-card:hover,
+.team-member:hover {
+    transform: translateY(-5px);            /* Eleva la card 5px */
+    box-shadow: 0 8px 20px var(--sombra-suave); /* Sombra más pronunciada */
+    border-color: var(--rosa-fuerte);       /* Borde rosa fuerte */
+}
+
+/* ========================================
+   ELEMENTOS DECORATIVOS DANGO
+   ======================================== */
+
+/* Base para decoraciones circulares tipo dango */
+.dango-decoration {
+    width: 30px;                           /* Ancho fijo */
+    height: 30px;                          /* Alto fijo (forma circular) */
+    border-radius: 50%;                    /* Completamente circular */
+    display: inline-block;                 /* Se comporta como texto */
+    margin: 0 5px;                         /* Margen horizontal */
+}
+
+/* Variaciones de color para dangos */
+.dango-rosa {
+    background-color: var(--rosa-sakura);  /* Dango rosa */
+}
+
+.dango-verde {
+    background-color: var(--verde-menta);  /* Dango verde */
+}
+
+.dango-crema {
+    background-color: var(--crema);        /* Dango crema */
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+
+/* Animación de flotación */
+@keyframes float {
+    0% { transform: translateY(0px); }      /* Posición inicial */
+    50% { transform: translateY(-10px); }   /* Sube 10px */
+    100% { transform: translateY(0px); }    /* Regresa a posición inicial */
+}
+
+/* Clase para aplicar la animación */
+.floating {
+    animation: float 3s ease-in-out infinite; /* Animación continua de 3 segundos */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Estilos para pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+    /* Navegación vertical en móviles */
+    nav {
+        flex-direction: column;             /* Cambia a layout vertical */
+    }
+    
+    /* Grid de una columna en móviles */
+    .menu-items {
+        grid-template-columns: 1fr;         /* Una sola columna */
+    }
+    
+    /* Secciones con menos padding en móviles */
+    section {
+        padding: 15px;                      /* Menos espaciado interno */
+        margin: 10px;                       /* Menos margen */
+    }
+    
+    /* Tablas más pequeñas en móviles */
+    table {
+        font-size: 14px;                    /* Texto más pequeño */
+    }
+    
+    /* Celdas más compactas */
+    table th, table td {
+        padding: 8px;                       /* Menos espaciado */
+    }
+}
+
+/* ========================================
+   ESTILOS ESPECÍFICOS POR PÁGINA
+   ======================================== */
+
+/* Para la página "Registrar Pedido" */
+.productos-grid {
+    display: grid;                          /* Layout de grilla */
+    /* Columnas que se ajustan, mínimo 200px */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;                             /* Espacio entre productos */
+    margin: 20px 0;                        /* Margen vertical */
+}
+
+/* Control de cantidad de productos */
+.cantidad-control {
+    display: flex;                         /* Layout horizontal */
+    align-items: center;                   /* Centra verticalmente */
+    justify-content: center;               /* Centra horizontalmente */
+    gap: 10px;                            /* Espacio entre elementos */
+    margin-top: 10px;                     /* Margen superior */
+}
+
+/* Resumen de pedido fijo en la derecha */
+.pedido-resumen {
+    position: fixed;                       /* Posición fija en pantalla */
+    right: 20px;                          /* 20px desde el borde derecho */
+    top: 200px;                           /* 200px desde arriba */
+    width: 300px;                         /* Ancho fijo */
+    /* Gradiente de blanco a rosa pastel */
+    background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--rosa-pastel) 100%);
+    padding: 20px;                        /* Espaciado interno */
+    border-radius: 15px;                  /* Bordes redondeados */
+    box-shadow: 0 5px 20px var(--sombra-suave); /* Sombra pronunciada */
+    border: 2px solid var(--rosa-sakura);  /* Borde rosa */
+}
+
+/* Para la página "Sobre Nosotros" */
+.member-photo {
+    width: 150px;                         /* Ancho fijo */
+    height: 150px;                        /* Alto fijo (cuadrado) */
+    border-radius: 50%;                   /* Completamente circular */
+    object-fit: cover;                    /* Mantiene proporción, recorta si es necesario */
+    border: 3px solid var(--rosa-sakura); /* Borde rosa */
+}
+
+/* Información de miembros */
+.member-info h3 {
+    color: var(--rosa-fuerte);            /* Título en rosa fuerte */
+    margin-bottom: 10px;                  /* Espacio debajo */
+}
+
+/* Para la página "Horarios" */
+.calendario {
+    display: grid;                        /* Layout de grilla */
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales (días de la semana) */
+    gap: 10px;                           /* Espacio entre días */
+    margin: 20px 0;                      /* Margen vertical */
+}
+
+/* Cada día del calendario */
+.dia {
+    border: 2px solid var(--rosa-pastel); /* Borde rosa suave */
+    padding: 10px;                       /* Espaciado interno */
+    min-height: 100px;                   /* Altura mínima */
+    /* Gradiente de blanco a crema */
+    background: linear-gradient(135deg, var(--blanco-perla) 0%, var(--crema) 100%);
+    border-radius: 10px;                 /* Bordes redondeados */
+}
+
+/* Encabezado de días de la semana */
+.dia-header {
+    font-weight: bold;                   /* Texto en negrita */
+    /* Gradiente de rosa sakura a rosa fuerte */
+    background: linear-gradient(135deg, var(--rosa-sakura) 0%, var(--rosa-fuerte) 100%);
+    color: white;                        /* Texto blanco */
+    text-align: center;                  /* Centrado */
+    padding: 10px;                       /* Espaciado interno */
+    border-radius: 10px;                 /* Bordes redondeados */
+}
+
+/* ========================================
+   CLASES UTILITARIAS
+   ======================================== */
+
+/* Alineación */
+.text-center {
+    text-align: center;                  /* Texto centrado */
+}
+
+/* Márgenes superiores */
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+
+/* Márgenes inferiores */
+.mb-20 { margin-bottom: 20px; }
+
+/* Padding */
+.p-20 { padding: 20px; }
+.p-30 { padding: 30px; }
+
+/* Layouts de grilla rápidos */
+.grid-2 {
+    display: grid;                       /* Layout de grilla */
+    grid-template-columns: 1fr 1fr;      /* 2 columnas iguales */
+    gap: 40px;                          /* Espacio entre columnas */
+}
+
+.grid-3 {
+    display: grid;                       /* Layout de grilla */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px;                          /* Espacio entre columnas */
+}
+
+/* Layouts flexbox */
+.flex {
+    display: flex;                       /* Layout flexible */
+}
+
+.flex-center {
+    display: flex;                       /* Layout flexible */
+    align-items: center;                 /* Centra verticalmente */
+    justify-content: center;             /* Centra horizontalmente */
+}
+
+/* Espaciado */
+.gap-10 { gap: 10px; }                 /* Espacio de 10px */
+.gap-20 { gap: 20px; }                 /* Espacio de 20px */
+
+/* Display */
+.inline { display: inline; }            /* Elemento en línea */
+.inline-block { display: inline-block; } /* Elemento en línea que acepta width/height */
+
+/* Anchos */
+.w-100 { width: 100%; }                 /* Ancho completo */
+.w-50 { width: 50px; }                  /* Ancho fijo de 50px */
+
+/* Grid para botones */
+.btn-grid {
+    display: grid;                       /* Layout de grilla */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 10px;                          /* Espacio entre botones */
+    max-width: 400px;                   /* Ancho máximo */
+}
+
+/* Texto y colores */
+.small-text {
+    font-size: 0.9em;                   /* Texto más pequeño */
+    color: #666;                        /* Color gris */
+}
+
+.muted {
+    color: #666;                        /* Color gris apagado */
+}
+
+/* Margen específico para cuando hay resumen fijo */
+.section-right-margin {
+    margin-right: 340px;                /* Deja espacio para el resumen fijo */
+}
+
+/* Estado activo */
+.active {
+    background-color: var(--rosa-sakura); /* Fondo rosa */
+    color: white;                       /* Texto blanco */
+}
+
+/* Precio destacado */
+.precio {
+    font-size: 1.2em;                   /* Texto más grande */
+    font-weight: bold;                  /* Negrita */
+    color: var(--rosa-fuerte);          /* Color rosa fuerte */
+    margin: 10px 0;                     /* Margen vertical */
+}
+
+/* Botón especial para agregar */
+.btn-agregar {
+    /* Gradiente de verde menta a rosa sakura */
+    background: linear-gradient(135deg, var(--verde-menta) 0%, var(--rosa-sakura) 100%);
+    color: var(--texto-oscuro);          /* Texto oscuro */
+    font-weight: bold;                  /* Negrita */
+}
+
+/* Placeholder para mapas */
+.map-placeholder {
+    margin-top: 20px;                   /* Margen superior */
+    background-color: #e9ecef;          /* Fondo gris claro */
+    height: 200px;                      /* Altura fija */
+    display: flex;                      /* Layout flexible */
+    align-items: center;                /* Centra verticalmente */
+    justify-content: center;            /* Centra horizontalmente */
+    border-radius: 8px;                 /* Bordes redondeados */
+}
+
+/* Fila de totales en tablas */
+.row-totales {
+    background-color: #f8f9fa;          /* Fondo gris muy claro */
+    font-weight: bold;                  /* Texto en negrita */
+}
+
+/* Grid para noticias */
+.noticias-grid {
+    display: grid;                      /* Layout de grilla */
+    /* Columnas que se ajustan, mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;                         /* Espacio entre noticias */
+    margin-top: 20px;                  /* Margen superior */
+}
+
+/* Card individual de noticia */
+.noticia-card {
+    /* Gradiente de blanco perla a rosa pastel */
+    background: linear-gradient(135deg, var(--blanco-perla), var(--rosa-pastel));
+    padding: 20px;                     /* Espaciado interno */
+    border-radius: 15px;               /* Bordes redondeados */
+    box-shadow: 0 4px 12px var(--sombra-suave); /* Sombra */
+    text-align: center;                /* Contenido centrado */
+    transition: transform 0.3s ease;   /* Animación suave */
+}
+
+/* Efecto hover en cards de noticias */
+.noticia-card:hover {
+    transform: translateY(-5px);       /* Eleva la card */
+    box-shadow: 0 8px 20px var(--sombra-suave); /* Sombra más pronunciada */
+}
+
+/* Imagen de noticia */
+.noticia-img {
+    width: 100%;                       /* Ancho completo */
+    max-height: 180px;                 /* Altura máxima */
+    object-fit: cover;                 /* Mantiene proporción, recorta si es necesario */
+    border-radius: 10px;               /* Bordes redondeados */
+    margin-bottom: 15px;               /* Espacio debajo */
+}
+
+/* Enlace de noticia */
+.noticia-link a {
+    display: inline-block;             /* Se comporta como bloque pero en línea */
+    margin-top: 10px;                  /* Margen superior */
+    /* Gradiente de rosa sakura a rosa fuerte */
+    background: linear-gradient(135deg, var(--rosa-sakura), var(--rosa-fuerte));
+    color: white;                      /* Texto blanco */
+    padding: 8px 16px;                 /* Espaciado interno */
+    border-radius: 20px;               /* Bordes muy redondeados */
+    text-decoration: none;             /* Sin subrayado */
+    transition: background-color 0.3s ease; /* Animación suave */
+}
+
+/* Hover en enlaces de noticias */
+.noticia-link a:hover {
+    /* Gradiente invertido */
+    background: linear-gradient(135deg, var(--rosa-fuerte), var(--rosa-sakura));
+}
