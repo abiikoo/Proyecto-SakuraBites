@@ -16,15 +16,6 @@ La plataforma permite a clientes y administradores interactuar con el sistema me
 
 ---
 
-## Objetivos del Proyecto
-
-- Mejorar la organización del negocio  
-- Automatizar procesos de pedidos e inventario  
-- Brindar una experiencia moderna al usuario  
-- Permitir el seguimiento de ventas y operaciones  
-
----
-
 ## Funcionalidades
 
 ### 👤 Cliente
@@ -55,11 +46,7 @@ La plataforma permite a clientes y administradores interactuar con el sistema me
 
 ---
 
-## 📁 Estructura del Proyecto
-
----
-
-## 🎨 Diseño de Interfaz
+## Diseño de Interfaz
 
 - **Tipografías:**
   - Texto: Arial  
@@ -78,7 +65,7 @@ La plataforma permite a clientes y administradores interactuar con el sistema me
 
 ---
 
-## 🧠 Diseño del Sistema
+## Diseño del Sistema
 
 El sistema está basado en un **modelo de base de datos relacional**, que incluye:
 
@@ -93,9 +80,11 @@ El sistema está basado en un **modelo de base de datos relacional**, que incluy
 
 ## Diagramas Utilizados
 - Entidad Relación
+  <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/40658f6d-f38b-4a6e-a706-eb4e73e9a0ef" />
 - Esquema de Modelado
+  <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/884f0b63-7383-442c-ba49-255775db7b5b" />
   
-## 📐 Wireframes
+## Wireframes
 
 El sistema fue diseñado considerando las siguientes pantallas:
 
@@ -120,19 +109,15 @@ El sistema fue diseñado considerando las siguientes pantallas:
 
 ---
 
-## Pantallas del Programa
+## Algunas Pantallas del Programa
 - Página Principal
   <img width="1919" height="938" alt="Image" src="https://github.com/user-attachments/assets/a601b1ff-ff7b-471b-87e8-048cd2a7bf8d" />
-- a
-- s
-- s
-- s
-- s
-- s
-- 
-## 🛠️ Instalación y Ejecución
+- Menú
+  <img width="1915" height="936" alt="Image" src="https://github.com/user-attachments/assets/a0103c01-ee97-4234-acfc-15a34813d0c4" />
+- Mis Pedidos
+  <img width="1919" height="943" alt="Image" src="https://github.com/user-attachments/assets/4288e14c-d03b-45b8-bf20-dd10ce579213" />
+- Panel de Administrador
+  <img width="1919" height="934" alt="Image" src="https://github.com/user-attachments/assets/2fb6aa92-61a9-45df-b8e7-7fc4410a86bd" />
+- Gestión de Inventario
+  <img width="1919" height="908" alt="Image" src="https://github.com/user-attachments/assets/d569f462-e362-4c40-ac1a-80b61dd4b8cf" />
 
-1. Clonar el repositorio:
-
-```bash
-git clone https://github.com/abiikoo/Semestral-SakuraBites.git
